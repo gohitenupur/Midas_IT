@@ -1,16 +1,14 @@
-import Headers from "./components/Headers";
-import Menu from "./components/Menu";
-import Images from "./components/Images";
-
+import React from 'react'
+import Comman from './components/Comman'
+import Headers from './components/Headers'
 
 function App() {
   return (
     <>
-      <Headers/>
-      <Menu/>
-      <Images/>
+    <Headers/>
+    <Comman/>
     </>
   );
 }
 
-export default App;
+export default App
