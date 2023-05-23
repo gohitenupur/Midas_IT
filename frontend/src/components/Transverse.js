@@ -2,7 +2,29 @@ import React, { useState } from 'react';
 
 function Transverse() {
   const [fileName, setFileName] = useState('No file chosen');
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    isFactored: false,
+    isUnfactored: false,
+    selfWeight: false,
+    permanentWeightDensity: '',
+    soilWeightDensity: '',
+    soilpH: '',
+    suChange: '',
+    subgradeWeightDensity: '',
+    loadSlopeL1: '1.5',
+    loadSlopeR1: '1.5',
+    undergroundWater: false,
+    gl: '',
+    barrier: false,
+    selfWeight: '',
+    additionalLoad: '',
+    medianStrip: false,
+    medianStripLoad: '',
+    sideWalk: false,
+    sideWalkWeightDensity: '',
+    sideWalkThickness: '',
+    crowdLoad: '',
+  });
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -77,14 +99,17 @@ function Transverse() {
         </div>
 
         <div className='form-group'>
-          <label>
+        
+          <label className='mr-10'>
+          
             <input
               type='checkbox'
               name='permanentWeightDensity'
               checked={formData.permanentWeightDensity}
               onChange={handleInputChange}
             />
-            Pavmenent <br/> Weight Density
+            Pavement &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Weight Density
           </label>
           <input
             type='text'
@@ -95,21 +120,46 @@ function Transverse() {
         </div>
 
         <div className='form-group'>
-          <label>Soil Weight Density</label>
+        <input
+              type='checkbox'
+              name='permanentWeightDensity'
+              checked={formData.soilWeightDensity}
+              onChange={handleInputChange}
+            />
+          <label>Soil &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Weight Density</label>
           <input type='text' name='soilWeightDensity' value={formData.soilWeightDensity} onChange={handleInputChange} />
         </div>
 
         <div className='form-group'>
-          <label>Soil pH [deg]</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label> pH </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input type='text' name='soilpH' value={formData.soilpH} onChange={handleInputChange} />
+          <label> [deg]</label>
         </div>
 
         <div className='form-group'>
-          <label>Su Change</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label>SuChange</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input type='text' name='suChange' value={formData.suChange} onChange={handleInputChange} />
+          <label> [deg]</label>
         </div>
 
         <div className='form-group'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <label>Subgrade Weight Density</label>
           <input
             type='text'
@@ -120,15 +170,125 @@ function Transverse() {
         </div>
 
         <div className='form-group'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <label>Load Slope (L) 1:</label>
-          <input type='text' name='loadSlopeL1' value={formData.loadSlopeL1} onChange={handleInputChange} disabled />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type='text' name='loadSlopeL1' value="1.5" onChange={handleInputChange} disabled />
         </div>
 
         <div className='form-group'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <label>Load Slope (R) 1:</label>
-          <input type='text' name='loadSlopeR1' value={formData.loadSlopeR1} onChange={handleInputChange} disabled />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type='text' name='loadSlopeR1' value="1.5" onChange={handleInputChange} disabled />
         </div>
 
+        <div className='form-group'>
+          <label>
+            <input
+              type='checkbox'
+              name='undergroundWater'
+              checked={formData.undergroundWater}
+              onChange={handleInputChange}
+            />
+            Underground Water
+          </label>
+        </div>
+        
+        <div className='form-group'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label>Gl:</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+          <input type='text' name='gl' value={formData.gl} onChange={handleInputChange} />
+          <label>m</label>
+        </div>
+        
+       
+
+        <div className='form-group'>
+          <label>
+            <input
+              type='checkbox'
+              name='barrier'
+              checked={formData.barrier}
+              onChange={handleInputChange}
+            />
+            Barrier
+          </label>
+        </div>
+
+        <div className='form-group'>
+          <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self Weight (km/hr³):</label>
+          <input type='text' name='selfWeight' value={formData.selfWeight} onChange={handleInputChange} />
+        </div>
+
+        <div className='form-group'>
+          <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additional Load (kN/m):</label>
+          <input type='text' name='additionalLoad' value={formData.additionalLoad} onChange={handleInputChange} />
+        </div>
+
+        <div className='form-group'>
+          <label>
+            <input
+              type='checkbox'
+              name='medianStrip'
+              checked={formData.medianStrip}
+              onChange={handleInputChange}
+            />
+            Median Strip
+          </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+          <input type='text' name='medianStripLoad' value={formData.medianStripLoad} onChange={handleInputChange} />
+        </div>
+
+        <div className='form-group'>
+          <label>
+            <input
+              type='checkbox'
+              name='sideWalk'
+              checked={formData.sideWalk}
+              onChange={handleInputChange}
+            />
+            Side Walk
+          </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+           
+          <label>Weight Density (kN/m³):</label>
+          <input type='text' name='sideWalkWeightDensity' value={formData.sideWalkWeightDensity} onChange={handleInputChange} />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label>Thickness (0.3048m):</label>
+          <input type='text' name='sideWalkThickness' value={formData.sideWalkThickness} onChange={handleInputChange} />
+        </div>
+
+        <div className='form-group'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label>Crowd Load (kN/m²):</label>
+          <input type='text' name='crowdLoad' value={formData.crowdLoad} onChange={handleInputChange} />
+        </div>
+
+
+
+      <hr/>
         <div className='d-flex justify-content-between'>
           <div>
             <label className='btn btn-primary'>
