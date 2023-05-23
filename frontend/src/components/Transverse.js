@@ -84,7 +84,7 @@ function Transverse() {
               checked={formData.permanentWeightDensity}
               onChange={handleInputChange}
             />
-            Permanent Weight Density
+            Pavmenent <br/> Weight Density
           </label>
           <input
             type='text'
