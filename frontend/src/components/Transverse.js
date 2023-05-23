@@ -16,7 +16,6 @@ function Transverse() {
     undergroundWater: false,
     gl: '',
     barrier: false,
-    selfWeight: '',
     additionalLoad: '',
     medianStrip: false,
     medianStripLoad: '',
